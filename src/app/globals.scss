@@ -1,0 +1,34 @@
+@import './reset.scss';
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --active-color: #009B2B;
+  --bg-color: #FFFFFF;
+  --color-light: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: #ffffff;
+  font-family: "Fira Code", serif;
+}
+
+.container {
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.xterm .xterm-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.xterm .xterm-viewport {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
