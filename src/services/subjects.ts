@@ -14,39 +14,30 @@ export const subjects = [
         slug: "commit",
         menu: [
           {
-            id: "G001",
+            id: "G0012",
             name: "Commit 123",
             dept: 2,
             path: "/git/commit-1",
             slug: "commit12",
             menu: [
               {
-                id: "G001",
+                id: "G0012-1",
                 name: "Commit with message",
                 dept: 3,
                 path: "/git/commit-with-message",
                 slug: "commit-with-message",
               },
               {
-                id: "G001",
+                id: "G0012-1",
                 name: "Commit without message",
                 dept: 3,
                 path: "/git/commit-without-message",
                 slug: "commit-without-message",
-                // menu: [
-                //   {
-                //     id: "G001",
-                //     name: "Commit without message 1",
-                //     dept: 4,
-                //     path: "/git/commit-without-message1",
-                //     slug: "commit-without-message1",
-                //   },
-                // ]
               },
             ],
           },
           {
-            id: "G001",
+            id: "G002",
             name: "Commit 456",
             dept: 2,
             path: "/git/commit-2",

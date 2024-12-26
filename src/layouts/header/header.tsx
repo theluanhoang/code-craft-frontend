@@ -1,19 +1,24 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { subjects } from "@/services/subjects"
 import useSidebarStore from "@/stores/sidebar.store"
 import ViewSidebarIcon from "@mui/icons-material/ViewSidebar"
 import clsx from "clsx"
 
+import useSlug from "@/hooks/use-slug"
+
 import styles from "./header.module.scss"
 
 function Header() {
   const { toggleSidebarUnderXL } = useSidebarStore()
+  const pathname = usePathname()
+  const [subjectSlug] = useSlug(pathname)
   return (
     <header className={clsx(styles["header-container"])}>
       <section className={clsx(["container", styles.header])}>
-        <figure className="header__logo">
+        <figure className={clsx(styles["header__logo"])}>
           <Link href={"/"}>
             <img src="/assets/logo.svg" alt="logo" />
           </Link>
@@ -22,10 +27,10 @@ function Header() {
           {subjects.map((subject) => (
             <li
               key={subject.id}
-              className={clsx([
+              className={clsx(
                 styles["header__menu-item"],
-                styles["active-menu"],
-              ])}
+                subject.slug === subjectSlug && styles["active-menu"]
+              )}
             >
               {subject.name}{" "}
             </li>

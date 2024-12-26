@@ -28,7 +28,11 @@ export default function MenuItem({
 }: MenuItemProps) {
   const hasMenu = subject.menu && subject.menu.length > 0
   const isActiveMenuItem =
-    !hasMenu && subject.dept === 0 && activedSubject.includes(subject.slug)
+    !hasMenu &&
+    subject.dept === 0 &&
+    activedSubject.includes(subject.slug) &&
+    subject.slug === lessonSlug
+
   const isLessonActive = subject.slug === lessonSlug
 
   const menuItemClass = clsx(styles["subject-menu-item"], {

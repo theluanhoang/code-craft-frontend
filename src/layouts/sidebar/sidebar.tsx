@@ -1,6 +1,6 @@
 "use client"
 
-import React, { forwardRef, useEffect } from "react"
+import { forwardRef, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { subjects } from "@/services/subjects"
 import useSidebarStore from "@/stores/sidebar.store"
@@ -8,16 +8,14 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow"
 import clsx from "clsx"
 
 import useBreakpoint from "@/hooks/use-breakpoint"
+import useSlug from "@/hooks/use-slug"
 import MenuItem from "@/components/sidebar/sidebar-item"
 
 import styles from "./sidebar.module.scss"
 
 const Sidebar = forwardRef<HTMLElement>((_, ref) => {
   const pathname = usePathname()
-  const [subjectSlug, lessonSlug] = React.useMemo(
-    () => pathname.split("/").filter(Boolean),
-    [pathname]
-  )
+  const [subjectSlug, lessonSlug] = useSlug(pathname)
   const {
     isSidebarOpen,
     isSidebarUnderXLOpen,
@@ -50,7 +48,7 @@ const Sidebar = forwardRef<HTMLElement>((_, ref) => {
                 key={subject.id}
                 subject={subject}
                 activedSubject={activedSubject}
-                lessonSlug={lessonSlug}
+                lessonSlug={lessonSlug!}
               />
             ))}
           </div>
