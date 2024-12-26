@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.subject-menu {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.subject-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px 24px;
+  svg {
+    transform: rotate(0);
+    transition: all 0.15s ease-out;
+  }
+
+  .toggle-icon {
+    transform: rotate(-90deg);
+    transition: all 0.15s ease-out;
+  }
+}
+
+.subject-title {
+  font-size: 21px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.subject-menu-item:hover {
+  background-color: $active-color;
+  color: var(--color-light);
+}
+
+.active-menu-item {
+  background-color: $active-color;
+  color: var(--color-light);
+}
+
+.toggle-menu {
+  max-height: 500px;
+  display: block;
+  transition: all 0.6s ease-out;
+}

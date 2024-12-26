@@ -1,18 +1,29 @@
-@import './reset.scss';
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --active-color: #009B2B;
-  --bg-color: #FFFFFF;
-  --color-light: #FFFFFF;
+@import "../styles/reset";
+@import "../styles/variables.scss";
+@import "../styles/mixin";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+// :root {
+//   --background: #ffffff;
+//   --foreground: #171717;
+//   --active-color: #009B2B;
+//   --bg-color: #FFFFFF;
+//   --color-light: #FFFFFF;
+//   --bg-second: #F8F8F8;
+//   --h-header: 85px;
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #0a0a0a;
+//     --foreground: #ededed;
+//   }
+// }
 
 body {
   background: #ffffff;
@@ -21,7 +32,6 @@ body {
 
 .container {
   padding: 0 24px;
-  margin: 0 auto;
 }
 
 .xterm .xterm-viewport::-webkit-scrollbar {

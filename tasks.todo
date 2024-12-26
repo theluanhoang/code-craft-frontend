@@ -1,0 +1,28 @@
+/*******************************************************/ 
+    'Cmd/Ctrl+Enter' // Triggers `Todo: Toggle Box`
+    'Alt+Enter' // Triggers `Todo: Toggle Box`
+    'Alt+D' // Triggers `Todo: Toggle Done`
+    'Alt+C' // Triggers `Todo: Toggle Cancelled`
+    'Alt+S' // Triggers `Todo: Toggle Start`
+    'Cmd/Ctrl+Shift+A' // Triggers  `Todo: Archive`
+/*******************************************************/
+
++ Core
+    ☐ Implement reusable component in Nextjs
+
++ Header
+    ☐ Implement UI list subject when hover menu item @started(24-12-26 11:36)
+    ☐ Implement behavious active link
+
++ Sidebar
+    ☐ Try to using GetStaticProps to generate paths instead of using logic at client-side
+    ☐ Responsive sidebar + header @started(24-12-23 02:53)
+    ✔ Refactor UI sidebar from loop to recursion to explore deep structure data. @started(24-12-21 00:29) @done(24-12-22 00:13) @lasted(23h44m25s)
+
++ Implement UI CSS to visualize knownledge about CSS
+    - Display:
+        ☐ Flex
+        ☐ Position
+    ☐ Distinguir between "Flex" and "Grid"
+
+************************************************************ Comming soon ************************************************************

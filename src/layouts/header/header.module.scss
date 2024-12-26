@@ -1,0 +1,76 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.header-container {
+  height: $h-header;
+}
+
+.header {
+  background: $background;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: $h-header;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  .header__logo {
+    cursor: pointer;
+  }
+
+  .header-view-sidebar {
+    display: block;
+    @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+      display: none;
+    }
+  }
+}
+
+.header__menu {
+  display: none;
+  @include media-breakpoint-up(map-get($grid-breakpoints, md)) {
+    display: flex;
+  }
+  gap: 35px;
+}
+
+.header__menu-item {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+
+.header__menu-item:hover {
+  color: $active-color;
+}
+
+.header__menu-item::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: $active-color;
+  transition: width 0.3s ease;
+}
+
+.header__menu-item:hover::before {
+  width: 100%;
+}
+
+.active-menu {
+  color: $active-color;
+}
+
+.header__menu-item.active-menu::before {
+  width: 100%;
+}

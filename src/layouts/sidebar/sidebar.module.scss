@@ -1,0 +1,75 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.sidebar {
+  position: fixed;
+  transform: translateX(-100%);
+  background: $background;
+  display: none;
+  height: calc(100vh - $h-header);
+  right: 0;
+  z-index: 50;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+    display: block;
+    right: auto;
+    left: 0;
+  }
+
+  .sidebar-content {
+    min-width: 300px;
+  }
+
+  .sidebar-icon {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 60px;
+    background: $active-color;
+    display: none;
+    transform: translateY(-50%);
+    right: -30px;
+    cursor: pointer;
+    @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    svg {
+      color: $background;
+    }
+  }
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.close {
+  transform: translateX(-100%);
+}
+
+.visible {
+  transform: translateX(0);
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: block;
+  cursor: pointer;
+  @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+    display: none;
+  }
+}

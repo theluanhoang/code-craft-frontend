@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.main-layout {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 0;
+  padding: 20px 30px;
+  @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+    margin-left: auto;
+  }
+}
