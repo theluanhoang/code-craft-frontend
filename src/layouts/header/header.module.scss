@@ -39,6 +39,7 @@
   gap: 35px;
 }
 
+// Moved and grouped styling
 .header__menu-item {
   cursor: pointer;
   font-weight: 500;
@@ -47,10 +48,25 @@
   align-items: center;
   position: relative;
   justify-content: space-between;
+
+  &:hover {
+    color: $active-color;
+    .menu-subjects {
+      display: block;
+    }
+  }
 }
 
-.header__menu-item:hover {
-  color: $active-color;
+.menu-subjects {
+  position: absolute;
+  padding: 10px 20px;
+  background: $background;
+  box-sizing: border-box;
+  top: calc(100% + 2px);
+  display: none;
+  right: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 49;
 }
 
 .header__menu-item::before {

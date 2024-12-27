@@ -11,12 +11,12 @@
     ☐ Implement reusable component in Nextjs
 
 + Header
-    ☐ Implement UI list subject when hover menu item @started(24-12-26 11:36)
-    ☐ Implement behavious active link
+    ✔ Implement UI list subject when hover menu item @started(24-12-26 11:36) @done(24-12-27 11:04) @lasted(23h28m36s)
+    ✔ Implement behavious active link @done(24-12-27 11:04)
 
 + Sidebar
     ☐ Try to using GetStaticProps to generate paths instead of using logic at client-side
-    ☐ Responsive sidebar + header @started(24-12-23 02:53)
+    ✔ Responsive sidebar + header @started(24-12-23 02:53) @done(24-12-27 11:05) @lasted(4d8h12m6s)
     ✔ Refactor UI sidebar from loop to recursion to explore deep structure data. @started(24-12-21 00:29) @done(24-12-22 00:13) @lasted(23h44m25s)
 
 + Implement UI CSS to visualize knownledge about CSS
