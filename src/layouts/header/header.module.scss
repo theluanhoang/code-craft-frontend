@@ -1,46 +1,63 @@
-@import "../../styles/variables";
-@import "../../styles/mixin";
+@use "../../styles/variables" as vars;
+@use "../../styles/mixin" as mix;
+@use "sass:map";
 
 .header-container {
-  height: $h-header;
+  height: vars.$h-header;
 }
 
 .header {
-  background: $background;
+  background: vars.$background;
   position: fixed;
   z-index: 50;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  height: $h-header;
+  height: vars.$h-header;
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  .header__logo {
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+
+  .header-logo {
     cursor: pointer;
   }
 
   .header-view-sidebar {
     display: block;
-    @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+
+    @include mix.media-breakpoint-up(map.get(vars.$grid-breakpoints, xl)) {
       display: none;
     }
   }
 }
 
-.header__menu {
+.header-menu {
   display: none;
-  @include media-breakpoint-up(map-get($grid-breakpoints, md)) {
+
+  @include mix.media-breakpoint-up(map.get(vars.$grid-breakpoints, md)) {
     display: flex;
   }
+
   gap: 35px;
 }
 
 // Moved and grouped styling
-.header__menu-item {
+.menu-subjects {
+  position: absolute;
+  padding: 10px 20px;
+  background: vars.$background;
+  box-sizing: border-box;
+  top: calc(100% + 2px);
+  display: none;
+  right: 0;
+  box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
+  z-index: 49;
+}
+
+.header-menu-item {
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
@@ -50,43 +67,32 @@
   justify-content: space-between;
 
   &:hover {
-    color: $active-color;
+    color: vars.$active-color;
+
     .menu-subjects {
       display: block;
     }
   }
 }
 
-.menu-subjects {
-  position: absolute;
-  padding: 10px 20px;
-  background: $background;
-  box-sizing: border-box;
-  top: calc(100% + 2px);
-  display: none;
-  right: 0;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  z-index: 49;
-}
-
-.header__menu-item::before {
+.header-menu-item::before {
   content: "";
   position: absolute;
   bottom: -2px;
   width: 0;
   height: 2px;
-  background-color: $active-color;
+  background-color: vars.$active-color;
   transition: width 0.3s ease;
 }
 
-.header__menu-item:hover::before {
+.header-menu-item:hover::before {
   width: 100%;
 }
 
 .active-menu {
-  color: $active-color;
+  color: vars.$active-color;
 }
 
-.header__menu-item.active-menu::before {
+.header-menu-item.active-menu::before {
   width: 100%;
 }

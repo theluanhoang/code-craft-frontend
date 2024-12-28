@@ -1,5 +1,6 @@
-@import "../../styles/variables";
-@import "../../styles/mixin";
+@use "../../styles/variables" as vars;
+@use "../../styles/mixin" as mix;
+@use "sass:map";
 
 .main-layout {
   display: flex;
@@ -9,7 +10,8 @@
   flex: 1;
   margin-left: 0;
   padding: 20px 30px;
-  @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+
+  @include mix.media-breakpoint-up(map.get(vars.$grid-breakpoints, xl)) {
     margin-left: auto;
   }
 }

@@ -25,7 +25,7 @@ export default function HeaderMenuItem({
 
     return (
         <li
-            className={clsx(styles["header__menu-item"], {
+            className={clsx(styles["header-menu-item"], {
                 [styles["active-menu"]]: subject.slug === lessonSlug,
             })}
             style={{ marginLeft: subject.dept !== 0 ? (subject.dept - 1) * 16 : 0 }}

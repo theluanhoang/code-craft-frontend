@@ -22,7 +22,7 @@ function Header() {
   return (
     <header className={clsx(styles["header-container"])}>
       <section className={clsx(["container", styles.header])}>
-        <figure className={clsx(styles["header__logo"])}>
+        <figure className={clsx(styles["header-logo"])}>
           <Link href={"/"}>
             {
               // eslint-disable-next-line @next/next/no-img-element
@@ -30,13 +30,13 @@ function Header() {
             }
           </Link>
         </figure>
-        <ul className={clsx(styles["header__menu"])}>
+        <ul className={clsx(styles["header-menu"])}>
           {subjects.map((subject: Subject) => (
 
             <li
               key={subject.id}
               className={clsx(
-                styles["header__menu-item"],
+                styles["header-menu-item"],
                 subject.slug === subjectSlug && styles["active-menu"]
               )}
             >

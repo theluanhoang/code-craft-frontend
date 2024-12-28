@@ -1,8 +1,8 @@
 "use client"
 
-import React, { ReactNode, useRef, useState } from "react"
 import useSidebarStore from "@/stores/sidebar.store"
 import clsx from "clsx"
+import React, { ReactNode, useRef, useState } from "react"
 
 import useBreakpoint from "@/hooks/use-breakpoint"
 
@@ -15,7 +15,6 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ children }) => {
   const [sidebarWidth, setSidebarWidth] = useState<number>(0)
-  const [isSidebarMeasured, setIsSidebarMeasured] = useState<boolean>(false)
   const sidebarRef = useRef<HTMLElement>(null)
   const { isOverXL } = useBreakpoint()
   const { isSidebarOpen } = useSidebarStore()
@@ -23,7 +22,6 @@ const Main: React.FC<MainProps> = ({ children }) => {
   React.useEffect(() => {
     const observer = new ResizeObserver(() => {
       if (sidebarRef.current) {
-        setIsSidebarMeasured(true)
         setSidebarWidth(sidebarRef.current.offsetWidth)
       }
     })

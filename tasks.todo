@@ -6,7 +6,9 @@
     'Alt+S' // Triggers `Todo: Toggle Start`
     'Cmd/Ctrl+Shift+A' // Triggers  `Todo: Archive`
 /*******************************************************/
-
++ DevOps
+    ☐ Deploy code on Vercel
+    
 + Core
     ☐ Implement reusable component in Nextjs
 

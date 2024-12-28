@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as vars;
 
 .subject-menu {
   max-height: 0;
@@ -11,6 +11,7 @@
   justify-content: space-between;
   cursor: pointer;
   padding: 10px 24px;
+
   svg {
     transform: rotate(0);
     transition: all 0.15s ease-out;
@@ -29,12 +30,12 @@
 }
 
 .subject-menu-item:hover {
-  background-color: $active-color;
+  background-color: vars.$active-color;
   color: var(--color-light);
 }
 
 .active-menu-item {
-  background-color: $active-color;
+  background-color: vars.$active-color;
   color: var(--color-light);
 }
 

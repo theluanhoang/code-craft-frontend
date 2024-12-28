@@ -1,16 +1,18 @@
-@import "../../styles/variables";
-@import "../../styles/mixin";
+@use "../../styles/variables" as vars;
+@use "../../styles/mixin" as mix;
+@use "sass:map";
 
 .sidebar {
   position: fixed;
   transform: translateX(-100%);
-  background: $background;
+  background: vars.$background;
   display: none;
-  height: calc(100vh - $h-header);
+  height: calc(100vh - vars.$h-header);
   right: 0;
   z-index: 50;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+
+  @include mix.media-breakpoint-up(map.get(vars.$grid-breakpoints, xl)) {
     display: block;
     right: auto;
     left: 0;
@@ -25,23 +27,24 @@
     top: 50%;
     width: 30px;
     height: 60px;
-    background: $active-color;
+    background: vars.$active-color;
     display: none;
     transform: translateY(-50%);
     right: -30px;
     cursor: pointer;
-    @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+
+    @include mix.media-breakpoint-up(map.get(vars.$grid-breakpoints, xl)) {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    box-shadow:
-      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgb(50 50 93 / 25%) 0 50px 100px -20px,
+    rgb(0 0 0 / 30%) 0 30px 60px -30px,
+    rgb(10 37 64 / 35%) 0 -2px 6px 0 inset;
+
     svg {
-      color: $background;
+      color: vars.$background;
     }
   }
 }
@@ -61,15 +64,13 @@
 
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
   z-index: 2;
   display: block;
   cursor: pointer;
-  @include media-breakpoint-up(map-get($grid-breakpoints, xl)) {
+
+  @include mix.media-breakpoint-up(map.get(vars.$grid-breakpoints, xl)) {
     display: none;
   }
 }
