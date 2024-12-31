@@ -36,7 +36,7 @@ const Main: React.FC<MainProps> = ({ children }) => {
         observer.unobserve(sidebarRef.current)
       }
     }
-  }, [sidebarRef])
+  }, [])
 
   return (
     <main className={clsx([styles["main-layout"]])}>
