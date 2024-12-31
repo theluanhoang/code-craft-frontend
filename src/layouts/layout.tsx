@@ -1,6 +1,7 @@
-import { ReactNode } from "react"
+import { ReactNode, Suspense } from "react"
 
 import Header from "./header/header"
+import Loading from "./loading"
 import Main from "./main/main"
 
 interface LayoutProps {
@@ -11,7 +12,9 @@ function Layout({ children }: LayoutProps) {
   return (
     <div>
       <Header />
-      <Main>{children}</Main>
+      <Suspense fallback={<Loading />}>
+        <Main>{children}</Main>
+      </Suspense>
     </div>
   )
 }
