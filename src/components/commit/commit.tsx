@@ -1,9 +1,9 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
 import SHA1 from "crypto-js/sha1"
 import gsap from "gsap"
 import Konva from "konva"
+import React, { useEffect, useRef, useState } from "react"
 import { Arrow, Group, Layer, Stage } from "react-konva"
 
 import { ICircle } from "../../interfaces/ITree"
@@ -30,6 +30,7 @@ interface IConnection {
 type ColorKey = keyof typeof colors
 
 const CommitGraph: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const stageRef = useRef<any>(null)
   const [isClient, setIsClient] = useState(false)
   const parentRef = useRef<HTMLDivElement>(null)
@@ -180,14 +181,10 @@ const CommitGraph: React.FC = () => {
         },
         childrenCommitHash: [],
       }
-
-      setDimensionCommits([
-        ...dimensionCommits,
-        {
-          x: initialCommit.x,
-          y: initialCommit.y,
-        },
-      ])
+      setDimensionCommits((d) => [...d, {
+        x: initialCommit.x,
+        y: initialCommit.y,
+      }])
       setCircles([initialCommit])
       setNewCommit(initialCommit)
       setBranch(branchName)

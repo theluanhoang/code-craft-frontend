@@ -17,7 +17,6 @@ function Header() {
   const { toggleSidebarUnderXL } = useSidebarStore()
   const pathname = usePathname()
   const { subjectSlug, lessonSlug } = useSlug(pathname)
-  console.log("SUBJECT SLUG:::", subjectSlug);
 
   return (
     <header className={clsx(styles["header-container"])}>

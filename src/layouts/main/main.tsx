@@ -32,6 +32,7 @@ const Main: React.FC<MainProps> = ({ children }) => {
 
     return () => {
       if (sidebarRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(sidebarRef.current)
       }
     }
