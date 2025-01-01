@@ -33,6 +33,7 @@ export const subjects = [
                 dept: 3,
                 path: "/git/commit-without-message",
                 slug: "commit-without-message",
+                
               },
             ],
           },

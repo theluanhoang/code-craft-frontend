@@ -1,7 +1,7 @@
-import Link from "next/link"
 import { Subject } from "@/types"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import clsx from "clsx"
+import Link from "next/link"
 
 import styles from "./sidebar-item.module.scss"
 

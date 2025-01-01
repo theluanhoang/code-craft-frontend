@@ -1,5 +1,5 @@
-import { useLayoutEffect, useState } from "react"
 import debounce from "lodash/debounce"
+import { useLayoutEffect, useState } from "react"
 
 export const breakpoints = {
   xs: 0,
@@ -19,7 +19,7 @@ type BreakpointInfo = {
 
 const useBreakpoint = (): BreakpointInfo => {
   const [currentBreakpoint, setCurrentBreakpoint] = useState<Breakpoint>("xs")
-  const [isOverXL, setIsOverXL] = useState<boolean>(false)
+  const [isOverXL, setIsOverXL] = useState<boolean>(true)
   const getBreakpoint = (): Breakpoint => {
     const width = window.innerWidth
 
