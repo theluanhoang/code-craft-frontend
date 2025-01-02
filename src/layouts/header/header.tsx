@@ -1,17 +1,17 @@
 "use client"
 
-import useSidebarStore from "@/stores/sidebar.store"
-import ViewSidebarIcon from "@mui/icons-material/ViewSidebar"
-import clsx from "clsx"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import useSidebarStore from "@/stores/sidebar.store";
+import { IconLayoutSidebarRightExpand } from '@tabler/icons-react';
+import clsx from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import HeaderMenuItem from "@/components/header/header-menu"
-import useSlug from "@/hooks/use-slug"
+import HeaderMenuItem from "@/components/header/header-menu";
+import useSlug from "@/hooks/use-slug";
 
-import { subjects } from "@/services/subjects"
-import { Subject } from "@/types"
-import styles from "./header.module.scss"
+import { subjects } from "@/services/subjects";
+import { Subject } from "@/types";
+import styles from "./header.module.scss";
 
 function Header() {
   const { toggleSidebarUnderXL } = useSidebarStore()
@@ -63,7 +63,7 @@ function Header() {
           className={clsx(styles["header-view-sidebar"])}
           onClick={toggleSidebarUnderXL}
         >
-          <ViewSidebarIcon />
+          <IconLayoutSidebarRightExpand stroke={2} />
         </div>
       </section>
     </header>

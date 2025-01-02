@@ -1,9 +1,9 @@
-import { Subject } from "@/types"
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
-import clsx from "clsx"
-import Link from "next/link"
+import { Subject } from "@/types";
+import { IconChevronDown } from '@tabler/icons-react';
+import clsx from "clsx";
+import Link from "next/link";
 
-import styles from "./sidebar-item.module.scss"
+import styles from "./sidebar-item.module.scss";
 
 interface MenuItemProps {
   subject: Subject
@@ -55,7 +55,7 @@ export default function MenuItem({
       >
         <h2 className={styles["subject-title"]}>{subject.name}</h2>
         {hasMenu && (
-          <KeyboardArrowDownIcon
+          <IconChevronDown
             className={clsx(
               activedSubject.includes(subject.slug) && styles["toggle-icon"]
             )}

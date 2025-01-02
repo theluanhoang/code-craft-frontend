@@ -122,10 +122,10 @@ export const subjects = [
       },
       {
         id: "C002",
-        name: "Positions",
+        name: "Flex Box",
         dept: 1,
-        path: "/css/positions",
-        slug: "positions",
+        path: "/css/flex-box",
+        slug: "flex-box",
       },
       {
         id: "C003",

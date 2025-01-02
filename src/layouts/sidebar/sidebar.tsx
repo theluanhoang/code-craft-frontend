@@ -1,17 +1,17 @@
 "use client"
 
-import { subjects } from "@/services/subjects"
-import useSidebarStore from "@/stores/sidebar.store"
-import DoubleArrowIcon from "@mui/icons-material/DoubleArrow"
-import clsx from "clsx"
-import { usePathname } from "next/navigation"
-import { forwardRef, useEffect } from "react"
+import { subjects } from "@/services/subjects";
+import useSidebarStore from "@/stores/sidebar.store";
+import { IconArrowBadgeRight } from '@tabler/icons-react';
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import { forwardRef, useEffect } from "react";
 
-import MenuItem from "@/components/sidebar/sidebar-item"
-import useBreakpoint from "@/hooks/use-breakpoint"
-import useSlug from "@/hooks/use-slug"
+import MenuItem from "@/components/sidebar/sidebar-item";
+import useBreakpoint from "@/hooks/use-breakpoint";
+import useSlug from "@/hooks/use-slug";
 
-import styles from "./sidebar.module.scss"
+import styles from "./sidebar.module.scss";
 
 const Sidebar = forwardRef<HTMLElement>((_, ref) => {
   const pathname = usePathname()
@@ -54,7 +54,7 @@ const Sidebar = forwardRef<HTMLElement>((_, ref) => {
           </div>
 
           <div className={clsx(styles["sidebar-icon"])} onClick={toggleSidebar}>
-            <DoubleArrowIcon />
+            <IconArrowBadgeRight stroke={2} />
           </div>
         </aside>
       )}
